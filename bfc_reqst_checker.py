@@ -32,7 +32,8 @@ def main():
         ##로그인 URL 설정
         driver.get('url')
         driver.implicitly_wait(10)
-
+        
+        ##아이디, 비밀번호 입력 및 로그인
         driver.find_element(By.NAME, 'mng_id').send_keys('id')
         driver.find_element(By.NAME, 'password').send_keys('pw')
         driver.find_element(By.XPATH, "//input[@class='btn_login']").click()
@@ -84,10 +85,12 @@ def main():
         main()
 
 
+## 토스트를 클릭하여 확인한 항목 리스트에 
 def addChk():
     global sn
     chkedLst.append(sn)
 
+## 윈도우 토스트 띄우기
 def showToast(gbn: str, stt: str, tit: str, usr: str):
     toast.show_toast(
         f"[{stt}] {gbn}",
